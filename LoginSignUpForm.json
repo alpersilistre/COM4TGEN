@@ -1,0 +1,236 @@
+{
+    "models": [
+        {
+            "edges": [
+                {
+                    "id": "bb1eb140-42a5-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterPassword",
+                    "sourceVertexId": "b4a7b960-42a5-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "b5c2c650-42a5-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "bc04f290-42a5-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterEmail",
+                    "sourceVertexId": "b4a7b960-42a5-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "b64d2c00-42a5-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "cbc218d0-42ae-11eb-992e-1be4a0e75c99",
+                    "name": "e_Error",
+                    "sourceVertexId": "b70160d0-42a5-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "b4a7b960-42a5-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "d780d760-42ae-11eb-992e-1be4a0e75c99",
+                    "name": "e_Succes",
+                    "sourceVertexId": "b70160d0-42a5-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "70aea040-42ad-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "3112fc90-42af-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickLogInForm",
+                    "sourceVertexId": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "b4a7b960-42a5-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "459932b0-42af-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickSignUpForm",
+                    "sourceVertexId": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "755cad10-42af-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterPassword",
+                    "sourceVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "5b186ed0-42af-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "76150090-42af-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterEmail",
+                    "sourceVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "5b8e6220-42af-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "18c20d60-42b0-11eb-992e-1be4a0e75c99",
+                    "name": "e_Error",
+                    "sourceVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "25848050-42b0-11eb-992e-1be4a0e75c99",
+                    "name": "e_Succes",
+                    "sourceVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "70aea040-42ad-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "2758d180-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterPassword",
+                    "sourceVertexId": "b64d2c00-42a5-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "09c47de0-42b8-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "4528a780-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterEmail",
+                    "sourceVertexId": "b5c2c650-42a5-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "0f5b9d10-42b8-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "5d577340-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickLogIn",
+                    "sourceVertexId": "0f5b9d10-42b8-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "b70160d0-42a5-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "5e1d8260-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickLogIn",
+                    "sourceVertexId": "09c47de0-42b8-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "b70160d0-42a5-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "9091c4e0-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterPassword",
+                    "sourceVertexId": "5b8e6220-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "8024c080-42b8-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "9629ce70-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickSignUp",
+                    "sourceVertexId": "8024c080-42b8-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "a3505a60-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterEmail",
+                    "sourceVertexId": "5b186ed0-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "845c4fb0-42b8-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "a8b8ef80-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickSignUp",
+                    "sourceVertexId": "845c4fb0-42b8-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99"
+                }
+            ],
+            "generator": "random(reached_vertex(v_UserLoggedIn))",
+            "id": "99c6c5f0-42a5-11eb-992e-1be4a0e75c99",
+            "name": "LoginSignUpForm",
+            "startElementId": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
+            "vertices": [
+                {
+                    "id": "b4a7b960-42a5-11eb-992e-1be4a0e75c99",
+                    "name": "v_LogInFormEmpty",
+                    "properties": {
+                        "x": 112,
+                        "y": 464
+                    }
+                },
+                {
+                    "id": "b5c2c650-42a5-11eb-992e-1be4a0e75c99",
+                    "name": "v_PasswordFilled",
+                    "properties": {
+                        "x": 278,
+                        "y": 580
+                    }
+                },
+                {
+                    "id": "b64d2c00-42a5-11eb-992e-1be4a0e75c99",
+                    "name": "v_EmailFilled",
+                    "properties": {
+                        "x": 261,
+                        "y": 692
+                    }
+                },
+                {
+                    "id": "b70160d0-42a5-11eb-992e-1be4a0e75c99",
+                    "name": "v_Validation",
+                    "properties": {
+                        "x": 927,
+                        "y": 527
+                    }
+                },
+                {
+                    "id": "70aea040-42ad-11eb-992e-1be4a0e75c99",
+                    "name": "v_UserLoggedIn",
+                    "properties": {
+                        "x": 1344,
+                        "y": 253.99999999999994
+                    }
+                },
+                {
+                    "id": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
+                    "name": "v_SignUpFormEmpty",
+                    "properties": {
+                        "x": 208,
+                        "y": -67
+                    }
+                },
+                {
+                    "id": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_Start",
+                    "properties": {
+                        "x": -79,
+                        "y": 269
+                    }
+                },
+                {
+                    "id": "5b186ed0-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_PasswordFilled",
+                    "properties": {
+                        "x": 441.75544652223186,
+                        "y": 53.45964170581027
+                    }
+                },
+                {
+                    "id": "5b8e6220-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_EmailFilled",
+                    "properties": {
+                        "x": 431.75544652223186,
+                        "y": 149.45964170581027
+                    }
+                },
+                {
+                    "id": "9967d180-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_Validation",
+                    "properties": {
+                        "x": 982.7554465222319,
+                        "y": -64.54035829418973
+                    }
+                },
+                {
+                    "id": "09c47de0-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "v_PasswordFilled",
+                    "properties": {
+                        "x": 559.378765922653,
+                        "y": 689.2993677921837
+                    }
+                },
+                {
+                    "id": "0f5b9d10-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "v_EmailFilled",
+                    "properties": {
+                        "x": 548.378765922653,
+                        "y": 582.2993677921837
+                    }
+                },
+                {
+                    "id": "8024c080-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "v_PasswordFilled",
+                    "properties": {
+                        "x": 692.378765922653,
+                        "y": 148.29936779218372
+                    }
+                },
+                {
+                    "id": "845c4fb0-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "v_EmailFilled",
+                    "properties": {
+                        "x": 671.378765922653,
+                        "y": 60.299367792183716
+                    }
+                }
+            ]
+        }
+    ],
+    "selectedModelIndex": 0,
+    "selectedElementId": "70aea040-42ad-11eb-992e-1be4a0e75c99"
+}
