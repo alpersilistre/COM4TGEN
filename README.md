@@ -4,7 +4,7 @@ These are current capabilities of the project:
 
 - Show networkx graph in a visual view
 - Apply community detection
-    - Show communities
+  - Show communities
 - Load graphwalker json model and convert it to a networkx graph
 - Generate test cases from graphwalker json model
 
@@ -19,7 +19,7 @@ These are current capabilities of the project:
 ### Required Pip Packages
 
 - networkx => For graph operations
-    - numpy==1.19.3 => There is a bug in the latest numpy version (1.19.4)
+  - numpy==1.19.3 => There is a bug in the latest numpy version (1.19.4)
 - python-louvain => For community detection
 - matplotlib
 
@@ -35,3 +35,9 @@ These are current capabilities of the project:
 - Graphwalker cli is required to generate test cases. You can install graphwalker cli from the [following page](https://graphwalker.github.io/).
 - The cli jar must be available in the root of the project. In the future, path option will be available.
 - Java 8 or higher must be available in your system.
+
+## References
+
+1. [Networkx](https://github.com/networkx/networkx)
+2. [Community Detection for Networkx](https://python-louvain.readthedocs.io/en/latest/index.html)
+3. [Graphwalker](https://github.com/GraphWalker/graphwalker-project/wiki)
