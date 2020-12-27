@@ -1,4 +1,5 @@
-from graphwalker_to_networkx_graph import *
+import time
+from graph_conversions import *
 from louvain import *
 import networkx as nx
 import matplotlib.cm as cm
@@ -7,7 +8,7 @@ from networkx.readwrite import json_graph
 from subprocess import PIPE, run
 
 
-def generate_testcase_from_grapwalker(model_name, end_point="v_UserLoggedIn"):
+def generate_testcase_from_grapwalker(model_name, end_point="v_Finish"):
     commands = [
             "java",
             "-jar",
@@ -15,7 +16,7 @@ def generate_testcase_from_grapwalker(model_name, end_point="v_UserLoggedIn"):
             "offline",
             "-m",
             f"{model_name}",
-            f"random(reached_vertex({end_point}))",
+            f"random(vertex_coverage(100) AND reached_vertex({end_point}))",
         ]
     result = run(commands, stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
@@ -35,15 +36,42 @@ def show_graph(G):
     plt.show()
 
 
-def main():
-    model = generate_graph_from_graphwalker_json("LoginSignUpForm.json")
-    G = json_graph.node_link_graph(model)
+def apply_test_generation_on_main_model(model_name):
+    total_time = 0
 
-    show_graph(G)
+    for val in range(10):
+        start_time = time.time()
+        test_case = generate_testcase_from_grapwalker(model_name)
+        end_time = time.time()
+        operation_time = end_time - start_time
+        formatted_operation_time = "{:.2f}".format(operation_time)
+        total_time = total_time + float("{:.2f}".format(operation_time))
+        iteration_number = val + 1
+        print(f"Runtime of the iteration {iteration_number} is: {formatted_operation_time} seconds")
+
+    print(f"Average runtime: {total_time / 10}")
+
+def main():
+    # generate_graphwalker_json_from_model("1")
+    main_model = generate_graph_from_graphwalker_json("LoginSignUpForm.json")
+    G = json_graph.node_link_graph(main_model)
+
+    # show_graph(G)
     # show_graph_with_communities(G)
-    # apply_community_louvain(G)
+    communities = apply_community_louvain(G)
+    community_number = 0
+    for community in communities:
+        community_number = community_number + 1
+        generate_graphwalker_json_from_model(community_number, community, main_model)
+
+    # start_time = time.time()
     # test_case = generate_testcase_from_grapwalker("LoginSignUpForm.json")
+    # end_time = time.time()
+    # operation_time = end_time - start_time
+    # print("Runtime of the program is: {:.2f} seconds".format(operation_time))
     # print(test_case)
+
+    # apply_test_generation_on_main_model("LoginSignUpForm.json")
 
 
 if __name__ == "__main__":

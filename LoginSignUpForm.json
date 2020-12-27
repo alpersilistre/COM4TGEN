@@ -109,9 +109,21 @@
                     "name": "e_ClickSignUp",
                     "sourceVertexId": "845c4fb0-42b8-11eb-992e-1be4a0e75c99",
                     "targetVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "a4fd6ae0-485a-11eb-9df9-9f5b8a9a4ca2",
+                    "name": "e_Finish",
+                    "sourceVertexId": "70aea040-42ad-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "9a679bf0-485a-11eb-9df9-9f5b8a9a4ca2"
+                },
+                {
+                    "id": "b2d43400-485a-11eb-9df9-9f5b8a9a4ca2",
+                    "name": "e_Pseudo",
+                    "sourceVertexId": "9a679bf0-485a-11eb-9df9-9f5b8a9a4ca2",
+                    "targetVertexId": "2b1134b0-42af-11eb-992e-1be4a0e75c99"
                 }
             ],
-            "generator": "random(reached_vertex(v_UserLoggedIn))",
+            "generator": "random(vertex_coverage(100) AND reached_vertex(v_Finish))",
             "id": "99c6c5f0-42a5-11eb-992e-1be4a0e75c99",
             "name": "LoginSignUpForm",
             "startElementId": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
@@ -128,32 +140,32 @@
                     "id": "b5c2c650-42a5-11eb-992e-1be4a0e75c99",
                     "name": "v_PasswordFilled",
                     "properties": {
-                        "x": 278,
-                        "y": 580
+                        "x": 346,
+                        "y": 583
                     }
                 },
                 {
                     "id": "b64d2c00-42a5-11eb-992e-1be4a0e75c99",
                     "name": "v_EmailFilled",
                     "properties": {
-                        "x": 261,
-                        "y": 692
+                        "x": 308,
+                        "y": 682
                     }
                 },
                 {
                     "id": "b70160d0-42a5-11eb-992e-1be4a0e75c99",
                     "name": "v_Validation",
                     "properties": {
-                        "x": 927,
-                        "y": 527
+                        "x": 870,
+                        "y": 477
                     }
                 },
                 {
                     "id": "70aea040-42ad-11eb-992e-1be4a0e75c99",
                     "name": "v_UserLoggedIn",
                     "properties": {
-                        "x": 1344,
-                        "y": 253.99999999999994
+                        "x": 1224,
+                        "y": 363.99999999999994
                     }
                 },
                 {
@@ -168,8 +180,8 @@
                     "id": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
                     "name": "v_Start",
                     "properties": {
-                        "x": -79,
-                        "y": 269
+                        "x": -80,
+                        "y": 279
                     }
                 },
                 {
@@ -200,16 +212,16 @@
                     "id": "09c47de0-42b8-11eb-992e-1be4a0e75c99",
                     "name": "v_PasswordFilled",
                     "properties": {
-                        "x": 559.378765922653,
-                        "y": 689.2993677921837
+                        "x": 693.378765922653,
+                        "y": 681.2993677921837
                     }
                 },
                 {
                     "id": "0f5b9d10-42b8-11eb-992e-1be4a0e75c99",
                     "name": "v_EmailFilled",
                     "properties": {
-                        "x": 548.378765922653,
-                        "y": 582.2993677921837
+                        "x": 636.378765922653,
+                        "y": 593.2993677921837
                     }
                 },
                 {
@@ -227,10 +239,18 @@
                         "x": 671.378765922653,
                         "y": 60.299367792183716
                     }
+                },
+                {
+                    "id": "9a679bf0-485a-11eb-9df9-9f5b8a9a4ca2",
+                    "name": "v_Finish",
+                    "properties": {
+                        "x": 1437,
+                        "y": 244
+                    }
                 }
             ]
         }
     ],
     "selectedModelIndex": 0,
-    "selectedElementId": "70aea040-42ad-11eb-992e-1be4a0e75c99"
+    "selectedElementId": "9a679bf0-485a-11eb-9df9-9f5b8a9a4ca2"
 }

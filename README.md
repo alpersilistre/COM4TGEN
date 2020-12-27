@@ -36,6 +36,15 @@ These are current capabilities of the project:
 - The cli jar must be available in the root of the project. In the future, path option will be available.
 - Java 8 or higher must be available in your system.
 
+## Workflow
+
+1. Create a model in Graphwalker studio
+2. Save it as a json file such as: LoginSignUpForm.json
+3. Load this json and convert it to a networkx graph
+    - Generate test cases and measure time
+4. Apply community detection and create multiple graphs
+    - Generate test cases and measure time
+
 ## References
 
 1. [Networkx](https://github.com/networkx/networkx)
