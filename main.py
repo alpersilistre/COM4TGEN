@@ -39,24 +39,26 @@ def show_graph(G):
 def apply_test_generation_on_main_model(model_name):
     total_time = 0
 
-    for val in range(10):
-        start_time = time.time()
-        test_case = generate_testcase_from_grapwalker(model_name)
-        end_time = time.time()
-        operation_time = end_time - start_time
-        formatted_operation_time = "{:.2f}".format(operation_time)
-        total_time = total_time + float("{:.2f}".format(operation_time))
-        iteration_number = val + 1
-        print(
-            f"Runtime of the iteration {iteration_number} is: {formatted_operation_time} seconds"
-        )
+    start_time = time.time()
+    test_case = generate_testcase_from_grapwalker(model_name)
+    end_time = time.time()
+    operation_time = end_time - start_time
+    formatted_operation_time = "{:.2f}".format(operation_time)
+    total_time = total_time + float("{:.2f}".format(operation_time))
+    iteration_number = 1
+    print(
+        f"Runtime of the iteration {iteration_number} is: {formatted_operation_time} seconds"
+    )
 
-    print(f"Average runtime: {total_time / 10}")
+    # for val in range(10):
+        # print(f"Test result: {test_case}")
+
+    # print(f"Average runtime: {total_time / 10}")
+    print(f"Runtime: {total_time}, test suite size: {len(test_case)}")
 
 
 def main():
-    # generate_graphwalker_json_from_model("1")
-    main_model = generate_graph_from_graphwalker_json("LoginSignUpForm.json")
+    main_model = generate_graph_from_graphwalker_json("ExampleModel2.json")
     G = json_graph.node_link_graph(main_model)
 
     # show_graph(G)
@@ -76,10 +78,11 @@ def main():
         apply_test_generation_on_main_model(json_file)
 
     # start_time = time.time()
-    # test_case = generate_testcase_from_grapwalker("LoginSignUpForm.json")
+    # test_case = generate_testcase_from_grapwalker("ExampleModel2.json")
     # end_time = time.time()
     # operation_time = end_time - start_time
     # print("Runtime of the program is: {:.2f} seconds".format(operation_time))
+    # print(f"Test suite lenght: {len(test_case)}")
     # print(test_case)
 
     # apply_test_generation_on_main_model("LoginSignUpForm.json")
