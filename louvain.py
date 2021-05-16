@@ -26,7 +26,7 @@ def apply_community_louvain(G):
     highest_partition = community_louvain.partition_at_level(dendo, (len(dendo) - 1))
     communities = set(highest_partition.values())
 
-    print(f"Communities;")
+    print("Communities;")
 
     list_of_communities = []
 

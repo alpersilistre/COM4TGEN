@@ -3,9 +3,9 @@
         {
             "edges": [
                 {
-                    "id": "e3819a58-0ae7-4f89-b20a-15050c5cfea8",
+                    "id": "14062d6d-d554-434b-a063-2605fa30e8cb",
                     "name": "e_ClickSignUpForm",
-                    "sourceVertexId": "f84339c8-e9bc-44ff-81c4-5f90660bac98",
+                    "sourceVertexId": "41ac953a-fd7d-492a-92a9-9de9dc6c6e39",
                     "targetVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99"
                 },
                 {
@@ -57,25 +57,25 @@
                     "targetVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "9fc4c7f9-4f17-4e48-9408-6224ef41ba59",
+                    "id": "1e367ab0-cc67-415b-b1e3-5561250bdca4",
                     "name": "e_Finish",
                     "sourceVertexId": "70aea040-42ad-11eb-992e-1be4a0e75c99",
-                    "targetVertexId": "31496138-700d-4f1b-aa9b-a7768d0b7777"
+                    "targetVertexId": "539ccd6c-c9f3-4d4b-b317-020df05b5cb0"
                 },
                 {
-                    "id": "fe717144-f85f-4815-87c5-d66accb8d30a",
+                    "id": "cad9d5b2-768b-4add-ae57-88c6d967222e",
                     "name": "e_Pseudo",
-                    "sourceVertexId": "31496138-700d-4f1b-aa9b-a7768d0b7777",
-                    "targetVertexId": "f84339c8-e9bc-44ff-81c4-5f90660bac98"
+                    "sourceVertexId": "539ccd6c-c9f3-4d4b-b317-020df05b5cb0",
+                    "targetVertexId": "41ac953a-fd7d-492a-92a9-9de9dc6c6e39"
                 }
             ],
             "generator": "random(vertex_coverage(100) AND reached_vertex(v_Finish))",
-            "id": "72208cca-5c69-4a29-8c0e-5b1bbaeb4f5e",
-            "name": "community-2",
-            "startElementId": "f84339c8-e9bc-44ff-81c4-5f90660bac98",
+            "id": "5baba1f7-8fa6-4d0c-8192-22ce38b7e4ce",
+            "name": "community-1",
+            "startElementId": "41ac953a-fd7d-492a-92a9-9de9dc6c6e39",
             "vertices": [
                 {
-                    "id": "f84339c8-e9bc-44ff-81c4-5f90660bac98",
+                    "id": "41ac953a-fd7d-492a-92a9-9de9dc6c6e39",
                     "name": "v_Start",
                     "properties": {
                         "x": 500,
@@ -83,7 +83,7 @@
                     }
                 },
                 {
-                    "id": "31496138-700d-4f1b-aa9b-a7768d0b7777",
+                    "id": "539ccd6c-c9f3-4d4b-b317-020df05b5cb0",
                     "name": "v_Finish",
                     "properties": {
                         "x": 1500,
@@ -94,59 +94,59 @@
                     "id": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
                     "name": "v_SignUpFormEmpty",
                     "properties": {
-                        "x": 208,
-                        "y": -67
+                        "x": 368.42058055068435,
+                        "y": -10.955429273129564
                     }
                 },
                 {
                     "id": "5b186ed0-42af-11eb-992e-1be4a0e75c99",
                     "name": "v_PasswordFilled",
                     "properties": {
-                        "x": 441.75544652223186,
-                        "y": 53.45964170581027
+                        "x": 399.75544652223186,
+                        "y": 104.45964170581027
                     }
                 },
                 {
                     "id": "5b8e6220-42af-11eb-992e-1be4a0e75c99",
                     "name": "v_EmailFilled",
                     "properties": {
-                        "x": 431.75544652223186,
-                        "y": 149.45964170581027
+                        "x": 366.75544652223186,
+                        "y": 195.45964170581027
                     }
                 },
                 {
                     "id": "9967d180-42af-11eb-992e-1be4a0e75c99",
                     "name": "v_Validation",
                     "properties": {
-                        "x": 982.7554465222319,
-                        "y": -64.54035829418973
+                        "x": 740.7568671995242,
+                        "y": -11.096071702777774
                     }
                 },
                 {
                     "id": "8024c080-42b8-11eb-992e-1be4a0e75c99",
                     "name": "v_PasswordFilled",
                     "properties": {
-                        "x": 692.378765922653,
-                        "y": 148.29936779218372
+                        "x": 670.378765922653,
+                        "y": 203.29936779218372
                     }
                 },
                 {
                     "id": "845c4fb0-42b8-11eb-992e-1be4a0e75c99",
                     "name": "v_EmailFilled",
                     "properties": {
-                        "x": 671.378765922653,
-                        "y": 60.299367792183716
+                        "x": 615.378765922653,
+                        "y": 110.29936779218372
                     }
                 },
                 {
                     "id": "70aea040-42ad-11eb-992e-1be4a0e75c99",
                     "name": "v_UserLoggedIn",
-                    "x": 1224,
-                    "y": 363.99999999999994
+                    "x": 1189.9554292731295,
+                    "y": 301.44286591411947
                 }
             ]
         }
     ],
     "selectedModelIndex": 0,
-    "selectedElementId": "31496138-700d-4f1b-aa9b-a7768d0b7777"
+    "selectedElementId": "539ccd6c-c9f3-4d4b-b317-020df05b5cb0"
 }

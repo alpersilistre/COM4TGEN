@@ -2,12 +2,15 @@ import networkx as nx
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 from networkx.readwrite import json_graph
+import os.path
 import json
 import uuid
 
 
 def generate_graph_from_graphwalker_json(file_name):
-    with open(file_name) as f:
+    file_path = os.path.join("json_models", file_name)
+
+    with open(file_path) as f:
         json_data = json.load(f)
         model_data = json_data.get("models")[0]
         model = {
@@ -87,7 +90,9 @@ def get_community_last_vertice(community, main_model):
 
 
 def generate_graphwalker_json_from_model(community_number, community, main_model):
-    with open("emptyModel.json") as f_main:
+    empty_model_json_file = os.path.join("json_models", "emptyModel.json")
+
+    with open(empty_model_json_file) as f_main:
         json_data = json.load(f_main)
         model_data = json_data.get("models")[0]
 
@@ -146,7 +151,9 @@ def generate_graphwalker_json_from_model(community_number, community, main_model
         model_data["edges"].append(community_pseudo_edge)
 
         community_json_name = f"community-{community_number}.json"
-        with open(community_json_name, "w", encoding="utf-8") as f_community:
+        community_json_file_path = os.path.join("json_models", community_json_name)
+
+        with open(community_json_file_path, "w", encoding="utf-8") as f_community:
             json.dump(json_data, f_community, ensure_ascii=False, indent=4)
 
         return community_json_name

@@ -1,0 +1,52 @@
+{
+    "models": [
+        {
+            "edges": [
+                {
+                    "id": "7c5353d0-4863-11eb-9bd2-89d30992ccaa",
+                    "name": "e_NewEdge1",
+                    "sourceVertexId": "699ed070-4863-11eb-9bd2-89d30992ccaa",
+                    "targetVertexId": "6a4b3d10-4863-11eb-9bd2-89d30992ccaa"
+                },
+                {
+                    "id": "7ee9b620-4863-11eb-9bd2-89d30992ccaa",
+                    "name": "e_NewEdge2",
+                    "sourceVertexId": "6a4b3d10-4863-11eb-9bd2-89d30992ccaa",
+                    "targetVertexId": "6ab94120-4863-11eb-9bd2-89d30992ccaa"
+                }
+            ],
+            "generator": "random(vertex_coverage(100) AND reached_vertex(v_Finish))",
+            "id": "68106840-4863-11eb-9bd2-89d30992ccaa",
+            "name": "Untitled-1",
+            "startElementId": "699ed070-4863-11eb-9bd2-89d30992ccaa",
+            "vertices": [
+                {
+                    "id": "699ed070-4863-11eb-9bd2-89d30992ccaa",
+                    "name": "v_Start",
+                    "properties": {
+                        "x": 523,
+                        "y": 535
+                    }
+                },
+                {
+                    "id": "6a4b3d10-4863-11eb-9bd2-89d30992ccaa",
+                    "name": "v_Test",
+                    "properties": {
+                        "x": 1013,
+                        "y": 539
+                    }
+                },
+                {
+                    "id": "6ab94120-4863-11eb-9bd2-89d30992ccaa",
+                    "name": "v_Finish",
+                    "properties": {
+                        "x": 1502,
+                        "y": 549
+                    }
+                }
+            ]
+        }
+    ],
+    "selectedModelIndex": 0,
+    "selectedElementId": "6ab94120-4863-11eb-9bd2-89d30992ccaa"
+}

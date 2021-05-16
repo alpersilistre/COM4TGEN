@@ -36,6 +36,12 @@ These are current capabilities of the project:
 - The cli jar must be available in the root of the project. In the future, path option will be available.
 - Java 8 or higher must be available in your system.
 
+#### How to start Graphwalker studio in local
+
+1. Download GraphWalker studio jar from the [official link](https://graphwalker.github.io/#download)
+2. Type `java -jar graphwalker-studio-4.3.0.jar` in the command line
+3. Open a browser and use url: `http://localhost:9090/studio.html`
+
 ## Workflow
 
 1. Create a model in Graphwalker studio
