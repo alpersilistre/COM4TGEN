@@ -5,6 +5,8 @@ from networkx.readwrite import json_graph
 import os.path
 import json
 import uuid
+import random
+import copy
 
 
 def generate_graph_from_graphwalker_json(file_name):
@@ -42,6 +44,60 @@ def generate_graph_from_graphwalker_json(file_name):
         return model
 
 
+def generate_mutation_model(main_model, mutation_number):
+    mutated_model = copy.deepcopy(main_model)
+    model_name = mutated_model["graph"]["name"]
+    mutated_model["graph"]["name"] = f"{model_name}-{mutation_number}"
+
+    random_number = random.randint(1, 2)
+    if random_number == 1:
+        delete_link(mutated_model)
+    elif random_number == 2:
+        delete_node(mutated_model)
+
+    return mutated_model
+
+
+def delete_link(model):
+    """Delete a random link from the model to create a mutant by Delete(edge)
+    Do not delete links that start and end nodes are part of.
+    """
+
+    start_node = next((e for e in model["nodes"] if e["name"] == "v_Start"), None)
+    finish_node = next((e for e in model["nodes"] if e["name"] == "v_Finish"), None)
+
+    selected_link_id = ""
+    while selected_link_id == "":
+        random_link_number = random.randint(0, len(model["links"]) - 1)
+        temp_link = model["links"][random_link_number]
+        if (
+            temp_link["source"] != start_node["id"]
+            and temp_link["source"] != finish_node["id"]
+            and temp_link["target"] != start_node["id"]
+            and temp_link["target"] != finish_node["id"]
+        ):
+            selected_link_id = temp_link["id"]
+
+    new_links = [x for x in model["links"] if x["id"] != selected_link_id]
+    model["links"] = new_links
+
+
+def delete_node(model):
+    """Delete a random node from the model to create a mutant by Delete(vertex)
+    Do not delete start and end nodes.
+    """
+
+    selected_node_id = ""
+    while selected_node_id == "":
+        random_node_number = random.randint(0, len(model["nodes"]) - 1)
+        temp_node = model["nodes"][random_node_number]
+        if temp_node["name"] != "v_Start" and temp_node["name"] != "v_Finish":
+            selected_node_id = temp_node["id"]
+
+    new_links = [x for x in model["links"] if (x["source"] != selected_node_id and x["target"] != selected_node_id)]
+    model["links"] = new_links
+
+
 def get_model_vertice(id, main_model):
     vertice_dict = {"id": id, "name": "", "properties": {"x": 0, "y": 0}}
     vertice = [x for x in main_model["nodes"] if x.get("id") == id]
@@ -75,17 +131,11 @@ def get_model_edges(source_id, main_model):
 
 
 def get_community_last_vertice(community, main_model):
-    main_model_finish_id = [
-        x for x in main_model["nodes"] if x.get("name") == "v_Finish"
-    ][0]["id"]
-    finish_edge = [
-        x for x in main_model["links"] if x.get("target") == main_model_finish_id
-    ][0]
+    main_model_finish_id = [x for x in main_model["nodes"] if x.get("name") == "v_Finish"][0]["id"]
+    finish_edge = [x for x in main_model["links"] if x.get("target") == main_model_finish_id][0]
 
     last_vertice_id = finish_edge.get("source")
-    community_last_vertice = [
-        x for x in main_model["nodes"] if x.get("id") == last_vertice_id
-    ][0]
+    community_last_vertice = [x for x in main_model["nodes"] if x.get("id") == last_vertice_id][0]
     return community_last_vertice
 
 
@@ -107,14 +157,8 @@ def generate_graphwalker_json_from_model(community_number, community, main_model
         model_data["vertices"][1]["id"] = finish_element_id
         json_data["selectedElementId"] = finish_element_id
 
-        main_model_start_id = [
-            x for x in main_model["nodes"] if x.get("name") == "v_Start"
-        ][0]["id"]
-        main_model_start_edge = [
-            x
-            for x in main_model["links"]
-            if x.get("source") == main_model_start_id and x.get("target") in community
-        ][0]
+        main_model_start_id = [x for x in main_model["nodes"] if x.get("name") == "v_Start"][0]["id"]
+        main_model_start_edge = [x for x in main_model["links"] if x.get("source") == main_model_start_id and x.get("target") in community][0]
 
         community_start_edge = {
             "id": str(uuid.uuid4()),

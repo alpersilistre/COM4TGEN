@@ -1,15 +1,25 @@
 import time
 import os.path
-from graph_conversions import generate_graph_from_graphwalker_json
-from graph_conversions import generate_graphwalker_json_from_model
-from louvain import apply_community_louvain
-from louvain import show_graph_with_communities
+from graph_conversions import *
+from louvain import *
 from utility_functions import *
 import networkx as nx
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 from networkx.readwrite import json_graph
 from subprocess import PIPE, run
+
+
+class bcolors:
+    HEADER = "\033[95m"
+    OKBLUE = "\033[94m"
+    OKCYAN = "\033[96m"
+    OKGREEN = "\033[92m"
+    WARNING = "\033[93m"
+    FAIL = "\033[91m"
+    ENDC = "\033[0m"
+    BOLD = "\033[1m"
+    UNDERLINE = "\033[4m"
 
 
 def generate_testcase_from_grapwalker(model_name, end_point="v_Finish"):
@@ -118,7 +128,9 @@ def apply_test_execution_on_model(test_suite, model):
                     )
                     previous_item = nodes_dict[item]
                 else:
-                    print(f"No pair found for: {nodes_dict[previous_item]} -> {nodes_dict[current_item]}")
+                    print(
+                        f"No pair found for: {get_key_from_value_in_dict(previous_item, nodes_dict)} -> {get_key_from_value_in_dict(current_item, nodes_dict)}"
+                    )
                     return False
 
     return True
@@ -129,10 +141,15 @@ def main():
     main_model_test_suite = generate_vertex_testcase_from_grapwalker(model_name)
 
     main_model = generate_graph_from_graphwalker_json(model_name)
-    if(apply_test_execution_on_model(main_model_test_suite, main_model)) is True:
-        print("Test execution is successful.")
-    else:
-        print("Test execution is failed.")
+
+    for i in range(10):
+        mutation_model = generate_mutation_model(main_model, i)
+
+        if (apply_test_execution_on_model(main_model_test_suite, mutation_model)) is True:
+            print("Test execution is successful.")
+        else:
+            print(f"{bcolors.WARNING}Test execution is failed. Mutant number {i} is killed.{bcolors.ENDC}")
+
     # G = json_graph.node_link_graph(main_model)
 
     # show_graph(G)
