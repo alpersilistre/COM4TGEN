@@ -7,6 +7,8 @@ import json
 import uuid
 import random
 import copy
+import string
+import random
 
 
 def generate_graph_from_graphwalker_json(file_name):
@@ -47,7 +49,7 @@ def generate_graph_from_graphwalker_json(file_name):
 def generate_mutation_model(main_model, mutation_number):
     mutated_model = copy.deepcopy(main_model)
     model_name = mutated_model["graph"]["name"]
-    mutated_model["graph"]["name"] = f"{model_name}-{mutation_number}"
+    mutated_model["graph"]["name"] = f"{model_name}-{mutation_number + 1}"
 
     random_number = random.randint(1, 2)
     if random_number == 1:
@@ -109,14 +111,14 @@ def get_model_vertice(id, main_model):
     return vertice_dict
 
 
-def get_model_edges(source_id, main_model):
+def get_model_edges(source_id, main_model, community_vertice_ids):
     empty_edge_dict = {
         "id": "",
         "name": "",
         "sourceVertexId": source_id,
         "targetVertexId": "",
     }
-    edges = [x for x in main_model["links"] if x.get("source") == source_id]
+    edges = [x for x in main_model["links"] if x.get("source") == source_id and x.get("target") in community_vertice_ids]
     edge_dict_list = []
 
     for edge in edges:
@@ -135,8 +137,17 @@ def get_community_last_vertice(community, main_model):
     finish_edge = [x for x in main_model["links"] if x.get("target") == main_model_finish_id][0]
 
     last_vertice_id = finish_edge.get("source")
-    community_last_vertice = [x for x in main_model["nodes"] if x.get("id") == last_vertice_id][0]
+    # community_last_vertice = [x for x in main_model["nodes"] if x.get("id") == last_vertice_id][0]
+    community_last_vertice = get_model_vertice(last_vertice_id, main_model)
     return community_last_vertice
+
+
+def find_entrance_to_community_model(community, main_model):
+    # find target vertexes that have edge with other members of the main model
+    for vertice_id in community:
+        entrance_vertex_array = [x for x in main_model["links"] if x.get("target") == vertice_id and x.get("source") not in community]
+        if len(entrance_vertex_array) > 0:
+            return entrance_vertex_array[0]
 
 
 def generate_graphwalker_json_from_model(community_number, community, main_model):
@@ -157,25 +168,51 @@ def generate_graphwalker_json_from_model(community_number, community, main_model
         model_data["vertices"][1]["id"] = finish_element_id
         json_data["selectedElementId"] = finish_element_id
 
+        main_model_start_edge = None
         main_model_start_id = [x for x in main_model["nodes"] if x.get("name") == "v_Start"][0]["id"]
-        main_model_start_edge = [x for x in main_model["links"] if x.get("source") == main_model_start_id and x.get("target") in community][0]
+        main_model_start_edge_list = [x for x in main_model["links"] if x.get("source") == main_model_start_id and x.get("target") in community]
+        if len(main_model_start_edge_list) > 0:
+            main_model_start_edge = main_model_start_edge_list[0]
 
-        community_start_edge = {
-            "id": str(uuid.uuid4()),
-            "name": main_model_start_edge.get("name"),
-            "sourceVertexId": start_element_id,
-            "targetVertexId": main_model_start_edge.get("target"),
-        }
+        community_start_edge = {}
+
+        is_middle_community = False
+
+        # If main_model_start_edge is None, it means the community is in the middle of the main Graph so not connected with the v_Start
+        if main_model_start_edge is None:
+            is_middle_community = True
+            # In this case, we will just connect the community nodel v_Start with the start vertex of the community
+            # We need to find the proper entry to the community here
+            community_entrance_edge = find_entrance_to_community_model(community, main_model)
+
+            community_start_edge = {
+                "id": str(uuid.uuid4()),
+                "name": community_entrance_edge.get("name"),
+                "sourceVertexId": start_element_id,
+                "targetVertexId": community_entrance_edge.get("target"),
+            }
+        else:
+            community_start_edge = {
+                "id": str(uuid.uuid4()),
+                "name": main_model_start_edge.get("name"),
+                "sourceVertexId": start_element_id,
+                "targetVertexId": main_model_start_edge.get("target"),
+            }
         model_data["edges"].append(community_start_edge)
+
+        community_last_vertice = get_community_last_vertice(community, main_model)
 
         for vertice_id in community:
             vertice = get_model_vertice(vertice_id, main_model)
-            edges = get_model_edges(vertice_id, main_model)
+
+            community_vertice_ids = community.copy()
+            community_vertice_ids.append(community_last_vertice["id"])
+
+            edges = get_model_edges(vertice_id, main_model, community_vertice_ids)
             model_data["vertices"].append(vertice)
             for edge in edges:
                 model_data["edges"].append(edge)
 
-        community_last_vertice = get_community_last_vertice(community, main_model)
         model_data["vertices"].append(community_last_vertice)
         community_end_edge = {
             "id": str(uuid.uuid4()),
@@ -200,4 +237,26 @@ def generate_graphwalker_json_from_model(community_number, community, main_model
         with open(community_json_file_path, "w", encoding="utf-8") as f_community:
             json.dump(json_data, f_community, ensure_ascii=False, indent=4)
 
-        return community_json_name
+        return community_json_name, is_middle_community
+
+
+def eliminate_same_name_vertexes(model_name):
+    model_json_file = os.path.join("json_models", model_name)
+
+    with open(model_json_file) as f_main:
+        json_data = json.load(f_main)
+        model_data = json_data.get("models")[0]
+
+        existing_vertex_names = []
+        for vertice in model_data["vertices"]:
+            if vertice["name"] in existing_vertex_names:
+                random_suffix = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+                vertice["name"] = vertice["name"] + random_suffix
+
+                if vertice["name"] not in existing_vertex_names:
+                    existing_vertex_names.append(vertice["name"])
+            else:
+                existing_vertex_names.append(vertice["name"])
+
+        with open(model_json_file, "w", encoding="utf-8") as json_file:
+            json.dump(json_data, json_file, ensure_ascii=False, indent=4)

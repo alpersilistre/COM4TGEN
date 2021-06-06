@@ -3,91 +3,79 @@
         {
             "edges": [
                 {
-                    "id": "870150c5-05ba-414e-83a7-abde2a0f2b31",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "b961436c-fb80-419d-8928-da42cf7f0d81",
-                    "targetVertexId": "cd63b7c0-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "067bdafd-3a62-4f1d-8384-3ed1ccda0b26",
+                    "name": "e_ClickSignUpForm",
+                    "sourceVertexId": "21ac981c-d1a8-4e32-9f04-277366eaa6f4",
+                    "targetVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "ced3e990-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cc7909a0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "ce37f7b0-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "755cad10-42af-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterPassword",
+                    "sourceVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "5b186ed0-42af-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "d06537f0-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cc7909a0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cd1ceac0-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "76150090-42af-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterEmail",
+                    "sourceVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "5b8e6220-42af-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "e0275650-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cc7909a0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cc7909a0-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "a3505a60-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterEmail",
+                    "sourceVertexId": "5b186ed0-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "845c4fb0-42b8-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "d0cc3720-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cd1ceac0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cd980e30-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "9091c4e0-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_EnterPassword",
+                    "sourceVertexId": "5b8e6220-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "8024c080-42b8-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "e3a75550-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cd1ceac0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cdd00e20-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "18c20d60-42b0-11eb-992e-1be4a0e75c99",
+                    "name": "e_Error",
+                    "sourceVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "e2a85be0-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cd63b7c0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cd980e30-4939-11eb-adbe-b7c8a2922f19"
-                },
-                {
-                    "id": "7dab5290-493b-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cd63b7c0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cc7909a0-4939-11eb-adbe-b7c8a2922f19"
-                },
-                {
-                    "id": "d179dc40-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cd980e30-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cdd00e20-4939-11eb-adbe-b7c8a2922f19"
-                },
-                {
-                    "id": "e7b51560-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "cdd00e20-4939-11eb-adbe-b7c8a2922f19",
+                    "id": "25848050-42b0-11eb-992e-1be4a0e75c99",
+                    "name": "e_Succes",
+                    "sourceVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99",
                     "targetVertexId": "70aea040-42ad-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "cf6b2080-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "e_NewEdge",
-                    "sourceVertexId": "ce37f7b0-4939-11eb-adbe-b7c8a2922f19",
-                    "targetVertexId": "cd1ceac0-4939-11eb-adbe-b7c8a2922f19"
+                    "id": "9629ce70-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickSignUp",
+                    "sourceVertexId": "8024c080-42b8-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99"
                 },
                 {
-                    "id": "df3f6930-3211-4419-ad3b-ad8f22302cce",
+                    "id": "a8b8ef80-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "e_ClickSignUp",
+                    "sourceVertexId": "845c4fb0-42b8-11eb-992e-1be4a0e75c99",
+                    "targetVertexId": "9967d180-42af-11eb-992e-1be4a0e75c99"
+                },
+                {
+                    "id": "ab210bc3-1de5-4f47-a7c7-b9feeba303bc",
                     "name": "e_Finish",
                     "sourceVertexId": "70aea040-42ad-11eb-992e-1be4a0e75c99",
-                    "targetVertexId": "5e477f82-54c4-48dd-9184-e177aa7036ba"
+                    "targetVertexId": "ca0f94c9-edee-4033-9230-370d2816adf2"
                 },
                 {
-                    "id": "1d526d58-2537-4514-8063-c810f31cb884",
+                    "id": "1c8c8c64-7612-4f54-9066-5df96a275d1a",
                     "name": "e_Pseudo",
-                    "sourceVertexId": "5e477f82-54c4-48dd-9184-e177aa7036ba",
-                    "targetVertexId": "b961436c-fb80-419d-8928-da42cf7f0d81"
+                    "sourceVertexId": "ca0f94c9-edee-4033-9230-370d2816adf2",
+                    "targetVertexId": "21ac981c-d1a8-4e32-9f04-277366eaa6f4"
                 }
             ],
             "generator": "random(vertex_coverage(100) AND reached_vertex(v_Finish))",
-            "id": "8e1cb9c0-76bd-4e55-9a82-8cd957643a94",
+            "id": "0b661078-a48a-4d16-965d-fb8d77128005",
             "name": "community-2",
-            "startElementId": "b961436c-fb80-419d-8928-da42cf7f0d81",
+            "startElementId": "21ac981c-d1a8-4e32-9f04-277366eaa6f4",
             "vertices": [
                 {
-                    "id": "b961436c-fb80-419d-8928-da42cf7f0d81",
+                    "id": "21ac981c-d1a8-4e32-9f04-277366eaa6f4",
                     "name": "v_Start",
                     "properties": {
                         "x": 500,
@@ -95,7 +83,7 @@
                     }
                 },
                 {
-                    "id": "5e477f82-54c4-48dd-9184-e177aa7036ba",
+                    "id": "ca0f94c9-edee-4033-9230-370d2816adf2",
                     "name": "v_Finish",
                     "properties": {
                         "x": 1500,
@@ -103,62 +91,64 @@
                     }
                 },
                 {
-                    "id": "cc7909a0-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "v_NewVertex",
+                    "id": "eecbf9e0-42ae-11eb-992e-1be4a0e75c99",
+                    "name": "v_SignUpFormEmpty",
                     "properties": {
-                        "x": 183,
-                        "y": -286
+                        "x": 368.42058055068435,
+                        "y": -10.955429273129564
                     }
                 },
                 {
-                    "id": "cd1ceac0-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "v_NewVertex",
+                    "id": "5b186ed0-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_PasswordFilledGNJO1R7PIL",
                     "properties": {
-                        "x": 531,
-                        "y": -354
+                        "x": 399.75544652223186,
+                        "y": 104.45964170581027
                     }
                 },
                 {
-                    "id": "cd63b7c0-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "v_NewVertex",
+                    "id": "5b8e6220-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_EmailFilled2J6IV117AH",
                     "properties": {
-                        "x": 264,
-                        "y": -150
+                        "x": 366.75544652223186,
+                        "y": 195.45964170581027
                     }
                 },
                 {
-                    "id": "cd980e30-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "v_NewVertex",
+                    "id": "9967d180-42af-11eb-992e-1be4a0e75c99",
+                    "name": "v_Validation0QG20R1DAO",
                     "properties": {
-                        "x": 535,
-                        "y": -185
+                        "x": 740.7568671995242,
+                        "y": -11.096071702777774
                     }
                 },
                 {
-                    "id": "cdd00e20-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "v_NewVertex",
+                    "id": "8024c080-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "v_PasswordFilledACZFGO3L2G",
                     "properties": {
-                        "x": 743,
-                        "y": -183
+                        "x": 670.378765922653,
+                        "y": 203.29936779218372
                     }
                 },
                 {
-                    "id": "ce37f7b0-4939-11eb-adbe-b7c8a2922f19",
-                    "name": "v_NewVertex",
+                    "id": "845c4fb0-42b8-11eb-992e-1be4a0e75c99",
+                    "name": "v_EmailFilled00HAEH2V6R",
                     "properties": {
-                        "x": 336,
-                        "y": -398
+                        "x": 615.378765922653,
+                        "y": 110.29936779218372
                     }
                 },
                 {
                     "id": "70aea040-42ad-11eb-992e-1be4a0e75c99",
                     "name": "v_UserLoggedIn",
-                    "x": 1189.9554292731295,
-                    "y": 301.44286591411947
+                    "properties": {
+                        "x": 2693.012848227412,
+                        "y": -328.23974870107133
+                    }
                 }
             ]
         }
     ],
     "selectedModelIndex": 0,
-    "selectedElementId": "5e477f82-54c4-48dd-9184-e177aa7036ba"
+    "selectedElementId": "ca0f94c9-edee-4033-9230-370d2816adf2"
 }
