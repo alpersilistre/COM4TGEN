@@ -658,7 +658,7 @@
                 },
                 {
                     "id": "79d8eb40-c2f4-11eb-bf6a-7db5875a2b13",
-                    "name": "e_NewEdge",
+                    "name": "e_Connection",
                     "sourceVertexId": "5b735590-493d-11eb-adbe-b7c8a2922f19",
                     "targetVertexId": "6febdf70-c2f4-11eb-bf6a-7db5875a2b13"
                 },
@@ -749,7 +749,7 @@
             ],
             "generator": "random(vertex_coverage(100) AND reached_vertex(v_Finish))",
             "id": "99c6c5f0-42a5-11eb-992e-1be4a0e75c99",
-            "name": "ExampleModel4",
+            "name": "ComplexModel",
             "startElementId": "2b1134b0-42af-11eb-992e-1be4a0e75c99",
             "vertices": [
                 {

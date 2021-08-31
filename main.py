@@ -274,10 +274,8 @@ def base_and_communities_mutant_scenario():
 
 
 def main():
-    # This was the first scenario that we thought, then we decided not to create mutants from communities
-    # base_and_communities_mutant_scenario()
-
-    model_name = "exampleModel4.json"
+    start_time = time.time()
+    model_name = "ComplexModel.json"
     eliminate_same_name_vertexes(model_name)
 
     main_model = generate_graph_from_graphwalker_json(model_name)
@@ -321,7 +319,7 @@ def main():
         community_test_cases = generate_vertex_testcase_from_grapwalker(community_json_name)
 
         # If the community does not start from the beginning of the main model, we will inject a temp vertex after the v_Start
-        # Then whe we apply model based testing, we will jump onto the entrance vertex to bypass missing path
+        # Then when we apply model based testing, we will jump onto the entrance vertex to bypass missing path
         if is_middle_community:
             for community_test_case in community_test_cases:
                 community_test_case.insert(1, "v_Temp")
@@ -338,15 +336,18 @@ def main():
     for mutation_model in main_model_mutants:
         if (apply_test_execution_on_community_model(communities_test_suite, mutation_model, False)) is True:
             print(f"{bcolors.WARNING}Test execution is successful. Mutant number {mutation_model.get('graph').get('name')} can not be killed.{bcolors.ENDC}")
-            communities_number_of_killed_mutant += 1
+            communities_number_of_lived_mutant += 1
         else:
             print(f"{bcolors.OKGREEN}Test execution is failed. Mutant number {mutation_model.get('graph').get('name')} is killed.{bcolors.ENDC}")
-            communities_number_of_lived_mutant += 1
+            communities_number_of_killed_mutant += 1
 
     print(
         f"{iteration_number} mutant processed with communities test suite: {communities_number_of_lived_mutant} mutant(s) lived, {communities_number_of_killed_mutant} mutant(s) killed."
     )
     print("----")
+    end_time = time.time()
+    operation_time = end_time - start_time
+    print("Runtime of the program is: {:.2f} seconds".format(operation_time))
 
 
 if __name__ == "__main__":

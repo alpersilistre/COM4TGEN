@@ -51,11 +51,14 @@ def generate_mutation_model(main_model, mutation_number):
     model_name = mutated_model["graph"]["name"]
     mutated_model["graph"]["name"] = f"{model_name}-{mutation_number + 1}"
 
+    action = ""
     random_number = random.randint(1, 2)
     if random_number == 1:
-        delete_link(mutated_model)
+        action = delete_link(mutated_model)
     elif random_number == 2:
-        delete_node(mutated_model)
+        action = delete_node(mutated_model)
+
+    mutated_model["action"] = action
 
     return mutated_model
 
@@ -67,6 +70,7 @@ def delete_link(model):
 
     start_node = next((e for e in model["nodes"] if e["name"] == "v_Start"), None)
     finish_node = next((e for e in model["nodes"] if e["name"] == "v_Finish"), None)
+    connection_link_ids = [e["id"] for e in model["links"] if e["name"] in "e_Connection"]
 
     selected_link_id = ""
     while selected_link_id == "":
@@ -77,11 +81,14 @@ def delete_link(model):
             and temp_link["source"] != finish_node["id"]
             and temp_link["target"] != start_node["id"]
             and temp_link["target"] != finish_node["id"]
+            and temp_link["id"] not in connection_link_ids
         ):
             selected_link_id = temp_link["id"]
 
     new_links = [x for x in model["links"] if x["id"] != selected_link_id]
     model["links"] = new_links
+
+    return f"The link with id: {selected_link_id} is deleted"
 
 
 def delete_node(model):
@@ -98,6 +105,8 @@ def delete_node(model):
 
     new_links = [x for x in model["links"] if (x["source"] != selected_node_id and x["target"] != selected_node_id)]
     model["links"] = new_links
+
+    return f"The node with id: {selected_node_id} is deleted"
 
 
 def get_model_vertice(id, main_model):
