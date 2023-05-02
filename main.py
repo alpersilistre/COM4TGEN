@@ -28,7 +28,7 @@ def generate_testcase_from_grapwalker(model_name, coverage_percentage=100, end_p
     commands = [
         "java",
         "-jar",
-        "graphwalker-cli-4.3.0.jar",
+        "graphwalker-cli-4.3.2.jar",
         "offline",
         "-m",
         f"{model_file_path}",

@@ -15,6 +15,7 @@ These are current capabilities of the project:
     1. Create it with: `py -3 -m venv env`
     2. Activate it with: `env\scripts\activate`
     3. Install pip packages when the virtual environment is activated
+- Download Graphwalker Studio and Cli from official site and copy them to project root
 
 ### Required Pip Packages
 
