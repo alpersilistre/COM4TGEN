@@ -40,7 +40,7 @@ These are current capabilities of the project:
 #### How to start Graphwalker studio in local
 
 1. Download GraphWalker studio jar from the [official link](https://graphwalker.github.io/#download)
-2. Type `java -jar graphwalker-studio-4.3.0.jar` in the command line
+2. Type `java -jar graphwalker-studio-4.*.jar` in the command line
 3. Open a browser and use url: `http://localhost:9090/studio.html`
 
 ## Workflow

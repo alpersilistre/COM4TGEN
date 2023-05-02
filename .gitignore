@@ -137,5 +137,5 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# Graphwalker CLI jar file
-graphwalker-cli-*.jar
+# Graphwalker jar file(s)
+graphwalker-*.jar
