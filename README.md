@@ -1,4 +1,4 @@
-# Model Based Testing
+# Graphwalker-based Test Generation Using Communities
 
 These are current capabilities of the project:
 
