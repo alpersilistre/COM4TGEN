@@ -16,8 +16,8 @@ def show_graph(G):
 
 def main():
     G = nx.random_k_out_graph(15, 3, 1, False)
-    # show_graph(G)
-    show_graph_with_communities(G)
+    show_graph(G)
+    # show_graph_with_communities(G)
 
 
 if __name__ == "__main__":

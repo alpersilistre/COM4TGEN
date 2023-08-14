@@ -235,7 +235,7 @@ def apply_model_based_testing_on_model(model_name, main_model):
 
 
 def base_and_communities_mutant_scenario():
-    model_name = "exampleModel4.json"
+    model_name = "testModelFire.json"
     eliminate_same_name_vertexes(model_name)
 
     main_model = generate_graph_from_graphwalker_json(model_name)
@@ -245,7 +245,7 @@ def base_and_communities_mutant_scenario():
     G = json_graph.node_link_graph(main_model)
 
     # show_graph(G)
-    # show_graph_with_communities(G)
+    show_graph_with_communities(G)
 
     community_jsons = []
     communities = apply_community_louvain(G)
@@ -275,7 +275,7 @@ def base_and_communities_mutant_scenario():
 
 def main():
     start_time = time.time()
-    model_name = "ComplexModel.json"
+    model_name = "testModelFire.json"
     eliminate_same_name_vertexes(model_name)
 
     main_model = generate_graph_from_graphwalker_json(model_name)
