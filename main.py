@@ -275,7 +275,7 @@ def base_and_communities_mutant_scenario():
 
 def main():
     start_time = time.time()
-    model_name = "testModelFire.json"
+    model_name = "testModelFire-v3.json"
     eliminate_same_name_vertexes(model_name)
 
     main_model = generate_graph_from_graphwalker_json(model_name)
@@ -307,22 +307,32 @@ def main():
 
     G = json_graph.node_link_graph(main_model)
 
+    communities_temp = []
     communities_test_suite = []
 
     communities = apply_community_louvain(G)
     community_number = 0
+
     for community in communities:
         community_number += 1
-        community_json_name, is_middle_community = generate_graphwalker_json_from_model(community_number, community, main_model)
+        community_json_name = generate_graphwalker_json_from_model(community_number, community, main_model)
+
+        communities_temp.append(community_json_name)
+
+    community_number = 0
+    for community_json_name in communities_temp:
+        community_number += 1
+        # community_json_name, is_middle_community = generate_graphwalker_json_from_model(community_number, community, main_model)
 
         # community_model = generate_graph_from_graphwalker_json(community_json_name)
-        community_test_cases = generate_vertex_testcase_from_grapwalker(community_json_name)
+        # At this step, I am manipulating the community to make sure it's complete.
+        community_test_cases = generate_vertex_testcase_from_grapwalker(community_json_name[0])
 
         # If the community does not start from the beginning of the main model, we will inject a temp vertex after the v_Start
         # Then when we apply model based testing, we will jump onto the entrance vertex to bypass missing path
-        if is_middle_community:
-            for community_test_case in community_test_cases:
-                community_test_case.insert(1, "v_Temp")
+        # if community_number == 2:
+        #     for community_test_case in community_test_cases:
+        #         community_test_case.insert(1, "v_Temp")
 
         communities_test_suite.append(community_test_cases)
 
